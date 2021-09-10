@@ -1,3 +1,12 @@
+#backend
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "tfstatestoragearea"
+    storage_account_name = "100921terraformsp"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
+}
 # Resource Groups vWAN
 resource "azurerm_resource_group" "rg1" {
   name     = "${var.lab-name}-vwan-rg-01"
